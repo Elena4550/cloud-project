@@ -1,0 +1,28 @@
+{
+  "name": "cloud-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "clean": "rimraf build",
+  "copy": "copyfiles -u 1 dev/**/* build",
+  "build": "npm run clean && npm run copy"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elena4550/cloud-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Elena4550/cloud-project/issues"
+  },
+  "homepage": "https://github.com/Elena4550/cloud-project#readme",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "rimraf": "^6.0.1"
+  }
+}
+
