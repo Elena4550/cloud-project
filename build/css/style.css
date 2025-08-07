@@ -179,7 +179,7 @@ svg * {
 
   --input-height: 48px;
 
-  --container-width: 1440px;
+  --container-width: 1170px;
 
   --container-padding-x: 15px;
 
@@ -193,7 +193,7 @@ body {
   line-height: 30px;
   color: var(--color-light-gray);
   background-color: var(--color-light);
-   margin: 0;
+  margin: 0;
 }
 
 body::before {
@@ -203,7 +203,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('./images/background.jpg') center/cover no-repeat;
+    background: url('../images/background.png') center/cover no-repeat;
     z-index: -1;
 }
 
@@ -255,22 +255,17 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-dark-gray);
   }
 
-
 .header {
   background: transparent;
 }
 
-.header__container  {
+.header__container {
+  padding-block: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 136px 45px 136px;
   column-gap: 58px;
-}
-
-.header__menu-wrapper {
-  margin-right: 392px; 
-}
+  }
 
 .header__logo {
   flex-shrink: 0;
@@ -350,10 +345,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-light-green);
 }
 
-
+/* 
 .motivation {
     padding-top: 136px;
-}
+} */
 
 .motivation__card {
     display: flex;
