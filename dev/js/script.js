@@ -1,5 +1,5 @@
-const burger = document.querySelector('.btn-burger');
-const navigation = document.querySelector('.header__menu');
+const burger = document.querySelector('.burger');
+const navigation = document.querySelector('.first-screen__nav');
 
 const toggleMenu =()=> {
    burger.classList.toggle('open');
