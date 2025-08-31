@@ -109,19 +109,27 @@ button {
   font: inherit;
 }
 
+
 html {
   height: 100%;
   scrollbar-gutter: stable;
-}
-
-html {
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100%;
   line-height: 1.5;
+
+  overflow: auto;         
+  scrollbar-width: none;   
 }
+
+body::-webkit-scrollbar {
+  display: none;          
+}
+
+::-webkit-scrollbar { 
+  display: none; }
 
 a:where([class]) {
   display: inline-flex;
@@ -173,6 +181,7 @@ svg * {
 :root {
   --color-dark: #000000;
   --color-light: #FFFFFF;
+  --color-light-alternate: #ECF2FF;
   --color-dark-alternate: #000727;
   --color-light-blu: #0051FF;
   --color-dark-blue: #0059FF;
@@ -186,10 +195,9 @@ svg * {
   --font-family: 'Roboto', sans-serif;
   --input-height: 48px;
   --container-width: 1170px;
-  --container-mobile-width: 345px;
-  --container-mobile-width-z: 736px;
-  --container-mobile-padding-x: 15px;
   --container-padding-x: 135px;
+  --container-mobile-width: 717px;
+  --container-mobile-padding-x: 25px;
   --transition-duration: 0.2s;
 }
 
@@ -237,24 +245,34 @@ body::before {
   z-index: 9999;
 } */
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    color: var(--color-dark-gray);
+ h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  color: var(--color-dark-gray);
+  }
+
+  h2, h4 {
+  font-weight: 600;
   }
   h2 {
-  font-family: var(--font-family-base);
   font-size: 46px;
-  font-weight: 600;
   color: var(--color-dark);
   line-height: 117.7%;
   letter-spacing: -0.03em;
   overflow-wrap: break-word; 
   text-align: left;    
 }
-p {
-  margin-block: 0;
+ h4 {
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+}  
+ h5 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 0;
 }
-
 p {
   font-family: var(--font-family-base);
   font-size: 18px;
@@ -263,9 +281,9 @@ p {
   line-height: 117.7%;
   letter-spacing: -0.03em;
   overflow-wrap: break-word; 
-  text-align: left;  
+  text-align: left; 
+  margin-block: 0; 
 }
-
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -284,17 +302,15 @@ a {
 a:hover {
   color: var(--color-light-gray);
 }
-
 .container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-  margin-inline: auto;
+  margin-inline: auto 0;
   padding-inline: var(--container-padding-x);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
-
 .first-screen {
   padding: 25px 0 86px;
 }
@@ -311,14 +327,11 @@ a:hover {
   margin-left: 58px;
   margin-right: auto;
 }
-
 .first-screen__nav-list {
   display: flex;
   gap: 58px;               
   justify-content: flex-start;
 }
-
-
 .first-screen__nav-link {
   text-decoration: none;
   font-weight: 500;
@@ -326,8 +339,6 @@ a:hover {
   font-family: var(--font-family);
   transition: color var(--transition-duration);
 }
-
-
 .first-screen__form {
     margin-bottom: 45px;
 }
@@ -349,13 +360,16 @@ a:hover {
   transition: border-color var(--transition-duration), background-color var(--transition-duration);
 }
 
-.first-screen__input::placeholder {
+.first-screen__input::placeholder,
+ .features-card__button::placeholder{
   color: var(--color-light-gray);
 }
-.first-screen__input:hover {
+.first-screen__input:hover,
+.features-card__button:hover{
   border-color: var(--color-light-green);
 }
-.first-screen__input:focus {
+.first-screen__input:focus,
+.features-card__button:hover {
   background-color: var(--color-light);
   outline: none;
 }
@@ -376,12 +390,10 @@ a:hover {
     cursor: pointer;
     transition: background-color var(--transition-duration);
 }
-
 .first-screen__button:hover,
 .motivation-card__button.button.transparent:hover { 
   background-color: var(--color-light-green);
 }
-
 .burger {
   padding: 1px 9px;
   border: none;
@@ -439,50 +451,65 @@ a:hover {
   display: flex;
   justify-content: start;
   align-items: center;
-  column-gap: 30px;
+  column-gap: 24px;
 }
 .motivation-card__body {
   height: auto;
-  margin-bottom: 54px;
+  margin-bottom: 76px;
 }
 .motivation-card__title {
 margin-bottom: 20px;
 }
 .motivation-card__description {
     max-width: 470px;
-}
-.motivation-card__description:not(:last-child) {
     margin-bottom: 20px;
-}
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
 }
 .motivation-card__image {
     width: 100%;
     height: auto;
     margin-bottom: 62px;
 }
- 
+.features {
+    margin-top: -100px;
+}
+.features-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 261px;
+  padding-right: 265px;
+}
+.features-card__button  {
+    max-width: 69px;
+    height: 22px;
+    padding-inline: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: var(--color-light-alternate);
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--border-radius);
+    color: var(--color-dark-blue);
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: border-color var(--transition-duration), background-color var(--transition-duration);
+    margin-bottom: 16px;
+}
+.features-card__title {
+    margin-bottom: 16px;
+}
+.features-card__description {
+  margin-bottom: 30px;
+}
+
 @media (min-width: 1025px) {
  .burger {
   display: none;
   }
   .first-screen__nav{
     display: flex;
-  } 
-    
+  }  
 }
-@media (max-width: 1119px) {
- .first-screen__nav {
-  max-width: 300px;
-}
-.first-screen__nav-list {
-  column-gap: 20px;
-}
-}
-@media (max-width: 1300px) {
+@media (max-width: 1360px) {
 .motivation-card__image {
   width: 60%;
   height: auto;
@@ -490,14 +517,29 @@ img {
 h2 {
   font-size: 36px;
 }
-p {
-  font-size: 14px;
+h4 {
+  font-size: 26px;
+}
+h5 {
+  font-size: 18px;
+}
+.features-card__description {
+    margin-bottom: 24px;
+}
+}
+@media (max-width: 1075px) {
+.first-screen__nav {
+  margin-left: 22px;
 }
 }
 @media (max-width: 1024px) {
 .container {
   padding-inline: 92px;
 }
+/* .motivation-card.hidden {
+  display: none;
+} */
+
 .first-screen__nav {
   position: fixed;
   inset: 90px 0 0;
@@ -515,117 +557,166 @@ p {
 h2 {
   font-size: 28px;
 }
+.features-card__body {
+  padding-left: 112px;
+  padding-right: 116px;
+}
+.features-card__title {
+  margin-bottom: 4px;
+}
 }
 
-@media (max-width: 767px) {
+@media (max-width: 769px) {
+  .first-screen {
+  padding: 15px 0 86px;
+}
 .container {
-  max-width: 600px;
-  padding-inline: 15px;
+max-width: calc(var(--container-mobile-width) + var(--container-mobile-padding-x) * 2);
+margin-inline: 0;
+padding-inline: var(--container-mobile-padding-x); 
+
 }
-.first-screen {
-    padding: 18px 0 86px;
-}
-  .first-screen__logo {
-  max-width: 120px;
-  max-height: 34px;
-  margin-bottom: 32px;
-}
-.first-screen__form {
-  margin-bottom: 30px;
-}
-.first-screen__input  {
-  max-width: 63px;
-}
-.first-screen__button {
-  min-width: 102px;       
-  justify-content: center;   
-}
-.first-screen__input, 
-.first-screen__button {
-  height: 44px;
-  padding-inline: 14px;
-  font-size: 14px;
-}
+.first-screen__logo,
+.first-screen__form,
 .burger {
-  margin-bottom: 30px;
+   margin-bottom: 32px;
+}
+.first-screen__logo {
+max-width: 112px;
+max-height: 42px;
+padding-top: 4px;
+}
+.first-screen__input,
+.first-screen__button,
+.motivation-card__button.button.transparent {
+height: 48px;
+font-size: 16px;
+padding-inline: 14px;
+}
+.first-screen__input {
+  max-width: 72px;
+  }
+.first-screen__button  {
+  max-width: 112px;
+  justify-content: center;
 }
 .motivation-card {
   flex-direction: column;
-  margin-top: 26px;
-}
-.motivation-card__body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-h2 {
-  font-size: 30px;
-  text-align: center;
 }
 .motivation-card__image {
   width: 100%;
-  height: auto;
 }
-
+.motivation-card__body {
+  flex-direction: column;
+  text-align: center; 
+  margin-bottom: 0;
 }
-@media (max-width: 480px) {
+.motivation-card__description {
+    max-width: 717px;
+    padding-inline: 25px;
+}
+h2 {
+  font-size: 34px;
+  text-align: center;
+}
+p {
+font-size: 16px;
+text-align: center;
+}
+.motivation-card__image {
+  margin-bottom: 40px;
+}
+.features-card__body {
+  padding-inline: 15px;
+}
+.features-card__button {
+  max-width: 55px;
+  font-size: 8px;
+  border-radius: 36px;
+  margin-bottom: -3px;
+}
+.features-card__title {
+  margin-bottom: -5px;
+}
+h4 {
+  font-size: 26px;
+  font-weight: 600;
+}
+.features-card__description {
+  margin-bottom: 15px;
+}
+h5 {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 20px;
+}
+}
+@media (max-width: 376px) {
 .container {
   max-width: 375px;
   padding-inline: 15px;
 }
-.first-screen {
-    padding: 18px 0 86px;
-}
 .first-screen__logo {
   max-width: 101px;
-  max-height: 30px;
-  margin-bottom: 30px;
+  max-height: 31px;
 }
-.first-screen__form {
-  margin-bottom: 30px;
+.first-screen__form-actions {
+  column-gap: 14px;
 }
-.first-screen__input  {
+.first-screen__input, .first-screen__button, .motivation-card__button.button.transparent {
+  max-height: 38px;
+  font-size: 14px;
+  padding-inline: 12px;
+}
+.first-screen__input {
   max-width: 63px;
 }
-.first-screen__button {
-  min-width: 102px;       
-  justify-content: center;   
+.first-screen__button, .motivation-card__button.button.transparent {
+ width: 102px;
 }
-.first-screen__input, 
-.first-screen__button,
+.motivation-card__title,
+.motivation-card__description,
 .motivation-card__button.button.transparent {
-  height: 38px;
-  padding-inline: 14px;
-  font-size: 14px;
+margin-bottom: 15px;
 }
-.burger {
-margin-bottom: 30px;
-}
-.motivation-card {
-  flex-direction: column;
-  margin-top: 0;
-}
-.motivation-card__body {
-  margin-bottom: -6px;
-}
-.motivation-card__title {
-    margin-bottom: 10px;
+.motivation-card__description{
+max-width: 375px;
+padding-inline: 0;
 }
 h2 {
   font-size: 28px;
 }
-
 p {
-  text-align: center;
+  font-size: 14px;
+}
+.motivation-card__image {
+  margin-bottom: 34px;
+}
+.features {
+  margin-top: -82px;
+}
+
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 14px;
 }
 }
+
 
 
 
  
+
+
+
+
+
+
+
+
 
 
 
