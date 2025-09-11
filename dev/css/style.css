@@ -368,16 +368,14 @@ a:hover {
   transition: border-color var(--transition-duration), background-color var(--transition-duration);
 }
 
-.first-screen__input::placeholder,
- .features-card__button::placeholder{
-  color: var(--color-light-gray);
-}
 .first-screen__input:hover,
-.features-card__button:hover{
+.features-card__button:hover,
+.numbers-card__button:hover{
   border-color: var(--color-light-green);
 }
 .first-screen__input:focus,
-.features-card__button:hover {
+.features-card__button:focus,
+.numbers-card__button:focus {
   background-color: var(--color-light);
   outline: none;
 }
@@ -477,21 +475,30 @@ margin-bottom: 20px;
   height: auto;
   margin-bottom: 62px;
 }
-.features-card__body {
+.features-card__body,
+.numbers-card__body {
   display: flex;
   flex-direction: column; 
   align-items: center;    
   text-align: center;    
 }
-.features-card {
+.features-card,
+.numbers-card {
   display: flex;
   justify-content: center;
   max-width: 1445px;
-  margin-top: -106px;
   padding-left: 261px;
   padding-right: 265px;
 }
-.features-card__button  {
+.features-card {
+  margin-top: -106px;
+}
+
+.numbers-card {
+  margin-top: -6px;
+}
+.features-card__button,
+.numbers-card__button  {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -507,14 +514,18 @@ margin-bottom: 20px;
     transition: all var(--transition-duration);
     margin-bottom: 10px;
 }
-.features-card__button:hover {
+
+.features-card__button:hover
+.numbers-card__button:hover {
     background-color: var(--color-light-green); 
     color: var(--color-light);
 }
-.features-card__title {
+.features-card__title,
+.numbers-card__title {
     margin-bottom: 16px;
 }
-.features-card__description {
+.features-card__description,
+.numbers-card__description {
   margin-bottom: 30px;
 }
 .benefits-list {
@@ -593,6 +604,10 @@ h4 {
 }
 .benefits-list {
     margin-inline: 100px;
+}
+.numbers-card {
+  padding-left: 121px;
+  padding-right: 125px;
 }
 }
 @media (max-width: 1075px) {
@@ -710,22 +725,33 @@ text-align: center;
 .motivation-card__image {
   margin-bottom: 40px;
 }
-.features-card__body {
+.features-card__body,
+.numbers-card__body {
   padding-inline: 15px;
 }
-.features-card__button {
-  max-width: 55px;
+.features-card__button,
+.numbers-card__button {
   font-size: 8px;
   border-radius: 36px;
   margin-bottom: -10px;
 }
-.features-card__title {
+.numbers-card__button {
+  max-width: 345px;
+  margin-bottom: 5px;
+}
+.features-card__button{
+  max-width: 55px;
+  margin-bottom: 5px;
+}
+.features-card__title,
+.numbers-card__title {
   margin-bottom: -5px;
 }
 h3 {
   font-size: 26px;
 }
-.features-card__description {
+.features-card__description,
+.numbers-card__description {
   margin-bottom: 15px;
 }
 h4 {
@@ -741,7 +767,10 @@ h5 {
   flex-direction: column;
   align-items: center;
 }
-
+.numbers-card {
+  padding-inline: 15px;
+  margin-top: 12px;
+}
 }
 
 @media (max-width: 376px) {
