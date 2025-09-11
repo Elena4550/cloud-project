@@ -1,88 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cloud</title>
-  <link rel="stylesheet" href="./css/style.css"/>
-</head>
-<body>
-  <main>
-    <section class="first-screen">
-      <div class="container">
-        <a class="first-screen__logo" href="/">
-          <img class="first-screen__logo-image" src="./images/logo.svg" alt="Cloud Logo" width="144" height="40" loading="lazy">
-        </a>
-
-        <nav class="first-screen__nav" id="site-nav">
-          <ul class="first-screen__nav-list">
-            <li class="first-screen__nav-item"><a class="first-screen__nav-link" href="/">Features</a></li>
-            <li class="first-screen__nav-item"><a class="first-screen__nav-link" href="/">How It Works</a></li>
-            <li class="first-screen__nav-item"><a class="first-screen__nav-link" href="/">Pricing</a></li>
-          </ul>
-        </nav>
-
-        <form class="first-screen__form">
-          <div class="first-screen__form-actions">
-            <label class="visually-hidden" for="login">Login</label>
-            <input
-              class="first-screen__input input"
-              type="text"
-              id="login"
-              name="login"
-              placeholder="Login"
-              autocomplete="username"
-            >
-            <button class="first-screen__button button" type="submit">Sign in</button>
-          </div>
-        </form>
-
-        <button
-          class="burger"
-          type="button"
-          aria-label="Open menu"
-          aria-controls="site-nav"
-          aria-expanded="false"
-        >
-          <span></span>
-        </button>
-
-        <div class="motivation">
-          <h1 class="visually-hidden">Cloud</h1>
-          <div class="motivation-card">
-            <div class="motivation-card__body">
-              <h2 class="motivation-card__title">Store, Sync, and Share Files Without Limits</h2>
-              <div class="motivation-card__description">
-                <p>Next-generation cloud storage for instant access to your files from any device. Reliable, fast, and secure</p>
-              </div>
-              <a class="motivation-card__button button transparent" href="/">Try for Free</a>
-            </div>
-            <img
-              class="motivation-card__image"
-              src="./images/motivation.png"
-              alt="Cloud Services"
-              width="670"
-              height="490"
-              loading="lazy"
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section class="features">
-      <h3 class="visually-hidden">Features</h3>
-      <div class="features-card">
-        <div class="features-card__body">
-          <a class="features-card__button" href="/">Features</a>
-          <h4 class="features-card__title">Why Choose CloudSync?</h2>
-          <div class="features-card__description">
-          <h5>Fast and secure cloud storage that adapts to your needs.</h5>
-          </div>
-      </div>
-    </section>
-  </main>
-
-  <script src="./js/script.js"></script>
-</body>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+<title>Cloud</title> 
+<link rel="stylesheet" href="./css/style.css"/> 
+</head> 
+<body> 
+<main>
+<section class="first-screen"> 
+  <div class="container"> 
+    <a class="first-screen__logo" href="/"> 
+      <img class="first-screen__logo-image" src="./images/logo.svg" alt="Cloud Logo" width="144" height="40" loading="lazy"> 
+    </a> 
+    <nav class="first-screen__nav"> 
+      <ul class="first-screen__nav-list"> 
+      <li class="first-screen__nav-item"><a class="first-screen__nav-link" href="/">Features</a></li> 
+      <li class="first-screen__nav-item"><a class="first-screen__nav-link" href="/">How It Works</a></li> 
+      <li class="first-screen__nav-item"><a class="first-screen__nav-link" href="/">Pricing</a></li> 
+    </ul> 
+  </nav> <form class="first-screen__form"> 
+    <div class="first-screen__form-actions"> 
+      <label class="visually-hidden" for="login">Login</label> 
+      <input class="first-screen__input input" 
+      type="text" 
+      id="login" 
+      name="login" 
+      placeholder="Login" 
+      autocomplete="username"> 
+      <button class="first-screen__button button" type="submit">Sign in</button> 
+    </div> 
+  </form> 
+  <button class="burger" 
+  type="button" 
+  aria-label="Open menu" 
+  aria-controls="site-nav" 
+  aria-expanded="false"> 
+  <span></span> 
+</button> 
+<div class="motivation"> 
+  <h1 class="visually-hidden">Cloud</h1> 
+  <div class="motivation-card"> 
+    <div class="motivation-card__body"> 
+      <h2 class="motivation-card__title">Store, Sync, and Share Files Without Limits</h2> 
+      <div class="motivation-card__description"> 
+        <p>Next-generation cloud storage for instant access to your files from any device. Reliable, fast, and secure</p> 
+      </div> 
+      <a class="motivation-card__button button transparent" href="/">Try for Free</a> 
+    </div> 
+    <img class="motivation-card__image" 
+    src="./images/motivation.png" alt="Cloud Services" width="670" height="490" loading="lazy"> 
+  </div> 
+</div> 
+</div> 
+</section> 
+<section class="features"> 
+  <h3 class="visually-hidden">Features</h3> 
+  <div class="features-card"> 
+    <div class="features-card__body"> 
+      <a class="features-card__button" href="/">Features</a> 
+      <h3 class="features-card__title">Why Choose CloudSync?</h3> 
+      <div class="features-card__description"> 
+        <h5>Fast and secure cloud storage that adapts to your needs.</h5> 
+      </div> 
+    </div> 
+  </section> 
+  <section class="benefits"> 
+    <h3 class="visually-hidden">Benefits</h3> 
+    <ul class="benefits-list"> <li class="benefits-item"> 
+      <div class="benefits-card"> <div class="circle"> 
+        <img class="benefits-image" src="./images/benefits1.svg" alt="" loading="lazy"> 
+      </div> <h4>Unlimited Storage</h4> 
+      <h6>Access any file anytime.</h6> 
+    </div> 
+  </li> 
+  <li class="benefits-item"> 
+    <div class="benefits-card"> 
+      <div class="circle"> 
+        <img class="benefits-image" src="./images/benefits2.svg" alt="" loading="lazy"> 
+      </div> 
+      <h4>Automatic Sync</h4> 
+      <h6>Instant file updates across all devices.</h6> 
+    </div> 
+  </li> 
+  <li class="benefits-item"> 
+    <div class="benefits-card"> 
+      <div class="circle"> 
+        <img class="benefits-image" src="./images/benefits3.svg" alt="" loading="lazy"> 
+      </div> 
+      <h4>High-Level Security</h4> 
+      <h6>Bank-grade data encryption.</h6> 
+    </div> 
+  </li> 
+</ul> 
+</section> 
+<section class="numbers"> 
+  <h3 class="visually-hidden">Numbers</h3> 
+  <div class="numbers-card"> 
+    <div class="numbers-card__body"> 
+      <a class="numbers-card__button" href="/">Key Metrics</a> 
+      <h3 class="numbers-card__title">Numbers That Speak for Themselves</h3> 
+      <div class="numbers-card__description"> 
+        <h5>CloudSync helps thousands of users securely store their files and work without limits.</h5> 
+      </div> 
+    </div> 
+  </section> 
+</main> 
+<script src="./js/script.js">
+</script> 
+</body> 
 </html>

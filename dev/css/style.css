@@ -206,20 +206,11 @@ body {
   font-weight: 500;
   font-size: 20px;
   line-height: 22px;
-  color: var(--color-light-gray);
+  color: var(--color-light);
   background-color: var(--color-light);
   margin: 0;
 }
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../images/background.png') center/cover no-repeat;
-    z-index: -1;
-}
+
 /* body::before {         
   content: "";
   position: fixed;
@@ -262,16 +253,32 @@ body::before {
   overflow-wrap: break-word; 
   text-align: left;    
 }
- h4 {
+ h3 {
   font-size: 36px;
   line-height: 44px;
   letter-spacing: -0.02em;
 }  
+h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+  font-family: var(--font-family-base);
+  margin: 0;
+  margin-bottom: 10px;
+}
+
  h5 {
   font-size: 20px;
   font-weight: 500;
   line-height: 30px;
   margin: 0;
+}
+h6 {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--font-family-base);
+  margin: 0;
+
 }
 p {
   font-family: var(--font-family-base);
@@ -312,6 +319,7 @@ a:hover {
   flex-wrap: wrap;
 }
 .first-screen {
+  background: url('../images/background1.png') center/cover no-repeat;
   padding: 25px 0 86px;
 }
 .first-screen__logo {
@@ -347,7 +355,7 @@ a:hover {
   column-gap: 16px;
 }
 .first-screen__input  {
-  max-width: 80px;
+  max-width: 88px;
   height: var(--input-height);
   padding-inline: 20px;
   font-size: 16px;
@@ -375,20 +383,20 @@ a:hover {
 }
 .first-screen__button,
 .motivation-card__button.button.transparent {
-    display: inline-flex;
-    align-items: center;
-    height: var(--input-height);
-    padding-inline: 38px;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: var(--font-family-base);
-    text-decoration: none;
-    background-color: var(--color-dark-blue);
-    border: none;
-    border-radius: var(--border-radius);
-    color: var(--color-light);
-    cursor: pointer;
-    transition: background-color var(--transition-duration);
+  display: inline-flex;
+  align-items: center;
+  height: var(--input-height);
+  padding-inline: 38px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--font-family-base);
+  text-decoration: none;
+  background-color: var(--color-dark-blue);
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--color-light);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
 }
 .first-screen__button:hover,
 .motivation-card__button.button.transparent:hover { 
@@ -461,44 +469,81 @@ a:hover {
 margin-bottom: 20px;
 }
 .motivation-card__description {
-    max-width: 470px;
-    margin-bottom: 20px;
+  max-width: 470px;
+  margin-bottom: 20px;
 }
 .motivation-card__image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 62px;
-}
-.features {
-    margin-top: -100px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 62px;
 }
 .features-card__body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; 
+  align-items: center;    
+  text-align: center;    
+}
+.features-card {
+  display: flex;
+  justify-content: center;
+  max-width: 1445px;
+  margin-top: -106px;
   padding-left: 261px;
   padding-right: 265px;
 }
 .features-card__button  {
-    max-width: 69px;
-    height: 22px;
-    padding-inline: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 16px; 
     font-size: 12px;
-    font-weight: 500;
-    background-color: var(--color-light-alternate);
-    border: 1px solid var(--color-light-gray);
-    border-radius: var(--border-radius);
+    font-weight: 600;
+    background-color: var(--color-light-alternate); 
+    border: none; 
+    border-radius: 36px; 
     color: var(--color-dark-blue);
     text-decoration: none;
-    box-sizing: border-box;
-    transition: border-color var(--transition-duration), background-color var(--transition-duration);
-    margin-bottom: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: all var(--transition-duration);
+    margin-bottom: 10px;
+}
+.features-card__button:hover {
+    background-color: var(--color-light-green); 
+    color: var(--color-light);
 }
 .features-card__title {
     margin-bottom: 16px;
 }
 .features-card__description {
   margin-bottom: 30px;
+}
+.benefits-list {
+  display: flex;
+  column-gap: 30px;
+  margin-inline: 138px;
+}
+.benefits-item {
+    padding: 21px 31px;
+    width: 370px;
+    height: 183px;
+    box-shadow: -2px -3px 92px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 60px;
+}
+.benefits-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.circle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: var(--color-dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px; 
 }
 
 @media (min-width: 1025px) {
@@ -510,6 +555,11 @@ margin-bottom: 20px;
   }  
 }
 @media (max-width: 1360px) {
+.features-card {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: var(--color-light);
+} 
 .motivation-card__image {
   width: 60%;
   height: auto;
@@ -517,14 +567,32 @@ margin-bottom: 20px;
 h2 {
   font-size: 36px;
 }
-h4 {
-  font-size: 26px;
+h3 {
+  font-size: 24px;
 }
 h5 {
   font-size: 18px;
+  line-height: 25px;
 }
 .features-card__description {
     margin-bottom: 24px;
+}
+.circle {
+  width: 50px;
+  height: 50px;
+}
+.benefits-image {
+  width: 35px;
+  height: 35px;   
+}
+.benefits-item {
+  padding: 15px;
+}
+h4 {
+  font-size: 20px;
+}
+.benefits-list {
+    margin-inline: 100px;
 }
 }
 @media (max-width: 1075px) {
@@ -558,23 +626,39 @@ h2 {
   font-size: 28px;
 }
 .features-card__body {
-  padding-left: 112px;
-  padding-right: 116px;
+  padding-left: 80px;
+  padding-right: 82px;
 }
+
 .features-card__title {
   margin-bottom: 4px;
+}
+.circle {
+  width: 45px;
+  height: 45px;
+  }
+.benefits-image {
+  width: 27px;
+  height: 27px;
+}
+    
+h4 {
+  font-size: 18px;
+  line-height: 30px;
+}
+h6 {
+    font-size: 14px;
 }
 }
 
 @media (max-width: 769px) {
   .first-screen {
-  padding: 15px 0 86px;
+  padding: 15px 0 114px;
 }
 .container {
 max-width: calc(var(--container-mobile-width) + var(--container-mobile-padding-x) * 2);
 margin-inline: 0;
 padding-inline: var(--container-mobile-padding-x); 
-
 }
 .first-screen__logo,
 .first-screen__form,
@@ -589,7 +673,7 @@ padding-top: 4px;
 .first-screen__input,
 .first-screen__button,
 .motivation-card__button.button.transparent {
-height: 48px;
+height: 38px;
 font-size: 16px;
 padding-inline: 14px;
 }
@@ -633,25 +717,33 @@ text-align: center;
   max-width: 55px;
   font-size: 8px;
   border-radius: 36px;
-  margin-bottom: -3px;
+  margin-bottom: -10px;
 }
 .features-card__title {
   margin-bottom: -5px;
 }
-h4 {
+h3 {
   font-size: 26px;
-  font-weight: 600;
 }
 .features-card__description {
   margin-bottom: 15px;
 }
+h4 {
+  margin-bottom: 0;
+}
 h5 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   text-align: center;
   line-height: 20px;
 }
+.benefits-list {
+  flex-direction: column;
+  align-items: center;
 }
+
+}
+
 @media (max-width: 376px) {
 .container {
   max-width: 375px;
@@ -691,17 +783,25 @@ p {
   font-size: 14px;
 }
 .motivation-card__image {
-  margin-bottom: 34px;
-}
-.features {
-  margin-top: -82px;
+  margin-bottom: 0;
 }
 
-h4 {
+.features-card {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: -84px;
+}
+
+h3 {
   font-size: 16px;
 }
 h5 {
   font-size: 14px;
+}
+.benefits-item {
+  width: 345px;
+  height: 133px;
+  margin-bottom: 15px;
 }
 }
 
